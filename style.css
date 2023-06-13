@@ -9,7 +9,7 @@ header{
     position: fixed;
     height: 12vh;
     top: 0;
-    left: o;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -29,7 +29,7 @@ nav a{
 
 }
 
-nav a:hover{
+nav a:hover, a:focus{
     color: red;
 }
 
@@ -51,9 +51,11 @@ nav a.active{
     display: block;
     cursor: pointer;
   }
-
+  header {
+    height: 10vh;
+  }
   .menu-toggle i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .menu-toggle.active i {
@@ -85,6 +87,7 @@ nav a.active{
   .menu a {
     margin-bottom: 10px;
 
+
   }
 }
 body {
@@ -101,9 +104,6 @@ body {
 .home{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 88vh; 
 }
 
 .home h1{
@@ -132,95 +132,50 @@ body {
     height: auto;
 }
 
-.about {
-    margin-top: 12vh;
-    height: 100vh;
-    padding: 40px;
-    margin-bottom: 20px;
-
-  }
-
- .hdg2{
-    text-align: center;
-  }
-.about h2{  
-    margin-bottom: 10px;
-}
-  
+ 
+/* 
   .qualifications {
     margin-top: 30px;
     display: flex;
-  }
+    flex-wrap: wrap;
+    justify-content:space-evenly;
 
+  } */
 
-  .education,
-  .certifications,
-  .skills {
-    flex: 1;
-    margin-top: 10px;
+  .qualifications {
+    margin-top: 30px;
+    display: grid; /* Change display property to grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Define the grid columns */
+    gap: 20px; /* Add gap between grid items */
     margin-left: 20px;
-
   }
   
+.skills{
+  margin-bottom: 40px;
+}
+
+ 
   .qualifications h2 {
     margin-bottom: 10px;
     color: red;
+    font-size: 1.2rem;
   }
   
-  .qualifications ol {
-    margin-top: 10px;
-  }
-  
+ 
   .qualifications ul {
     margin-top: 10px;
     list-style-type: none;
   }
     
- 
-  .skills li {
-    margin-bottom: 5px;
-    font-weight: 500;
-  }
 
-  ul li:first-child {
-    font-size:larger;
-    font-weight:500;
-  }
-  
-  ul li:nth-child(2) {
-    font-size:large;
-  }
-  ul li:last-child {
-    font-size:medium;
-    font-weight: lighter;
-  }
-  
-  
-  
-  
-  /* Media query for responsive layout */
-  @media (max-width: 768px) {
-    .qualifications {
-      flex-direction: column;
-    }
-  
-    .qualifications > * {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-  }
-  
 
 
 
 
 
 .contact{
-    display: flex;
     flex-wrap: wrap;
     justify-content:space-evenly;
-    align-items: center;
-    height: 88vh; 
     text-align: center;
     padding: 40px;
 }
@@ -263,7 +218,7 @@ body {
   transition: color 0.3s;
 }
 
-.contact-item a:hover {
+.contact-item a:hover, a:focus {
   color: #ff0000;
 }
 
@@ -314,7 +269,7 @@ textarea {
 }
 .submit-btn {
     padding: 1rem 2rem;
-    font-size: 1rem;
+    font-size: inherit;
     border: none;
     border-radius: 5px;
     background-color: red;
@@ -325,5 +280,9 @@ textarea {
 .submit-btn:hover {
     transform: scale(1.06);
     
+}section {
+  height: 100vh; /* Set the height to occupy the full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
- 
